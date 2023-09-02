@@ -9,11 +9,10 @@
     <div class="container">
         <header>Registration form</header>
 
-        <form action="" method="POST">
+        <form action="pg2_Address_page.php" method="POST">
           <div class="form1">
             <div class="personal-details">
                 <span class ="title">Personal details</span>
-
                 <div class="group">
                     <div class="input-group">
                         <label>Fullname</label> 
@@ -47,12 +46,26 @@
                         <label>Email</label> 
                         <input type="text" placeholder ="Enter your Email" name="email">
                     </div>
+
+                    <div class="input-group">
+                        <label>User name</label> 
+                        <input type="text" placeholder ="Enter your username" name="user">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Password</label> 
+                        <input type="text" placeholder ="Enter your password" name="pass">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Confirm Password</label> 
+                        <input type="text" placeholder ="Enter your Password" name="conpass">
+                    </div>
                     
                 </div> 
             </div>
           </div>
-
-                <button class="button-primary" type ="submit">Submit</button> 
+                <button class="button-primary" type ="submit">Next</button> 
         </form>
     </div>
 </body>

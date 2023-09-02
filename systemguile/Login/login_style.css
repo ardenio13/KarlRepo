@@ -1,0 +1,60 @@
+body {
+
+    background-image: url('inventory.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 95vh;
+  
+}
+
+.container {
+
+    background-color:rgb(199, 182, 199);
+    position:relative;
+    max-width: 400px;
+    width: 100%;
+    border-radius: 20px;
+  
+ 
+}
+
+input {
+
+    height: 40px;
+    max-width: 400px;
+    width: 100%;
+    border-radius:8px;
+    padding:20px;
+
+}
+
+h2 {
+
+   margin-left: 150px ;
+   
+}
+
+.container form {
+
+    position: relative; 
+    min-height: 300px;
+}
+
+.btn-login{
+
+    margin-top: 25px;
+    padding:10px;
+    width:100px;
+    border-radius: 10px;
+    background-color: rgb(212, 157, 212);
+}
+
+label {
+    
+    padding:10px;
+}
+
