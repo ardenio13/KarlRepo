@@ -1,4 +1,17 @@
 
+<?php
+session_start();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $_SESSION['elem'] = $_POST['elem'];
+    $_SESSION['junior'] = $_POST['junior'];
+    $_SESSION['senior'] = $_POST['senior'];
+    $_SESSION['college'] = $_POST['college'];
+  
+    header('Location: .php'); 
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html>
 

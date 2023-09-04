@@ -1,3 +1,22 @@
+<?php
+session_start();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $_SESSION['fullname'] = $_POST['fullname'];
+    $_SESSION['bday'] = $_POST['bday'];
+    $_SESSION['gender'] = $_POST['gender'];
+    $_SESSION['age'] = $_POST['age'];
+    $_SESSION['contact'] = $_POST['contact'];
+    $_SESSION['email'] = $_POST['email'];
+    $_SESSION['user'] = $_POST['user'];
+    $_SESSION['pass'] = $_POST['pass'];
+    $_SESSION['conpass'] = $_POST['conpass'];
+
+    header('Location: pg2_Address_page.php'); 
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -9,7 +28,7 @@
     <div class="container">
         <header>Registration form</header>
 
-        <form action="pg2_Address_page.php" method="POST">
+        <form action="pg1_Personal_page.php" method="POST">
           <div class="form1">
             <div class="personal-details">
                 <span class ="title">Personal details</span>

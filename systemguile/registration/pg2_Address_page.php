@@ -1,4 +1,20 @@
 
+<?php
+session_start();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $_SESSION['baranggay'] = $_POST['baranggay'];
+    $_SESSION['zip'] = $_POST['zip'];
+    $_SESSION['street'] = $_POST['street'];
+    $_SESSION['country'] = $_POST['country'];
+    $_SESSION['province'] = $_POST['province'];
+    $_SESSION['city'] = $_POST['city'];
+  
+    header('Location: pg3_Educationalbg_page.php'); 
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
