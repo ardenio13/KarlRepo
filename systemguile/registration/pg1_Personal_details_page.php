@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="container">
         <header>Registration form</header>
 
-        <form action="pg1_Personal_page.php" method="POST">
+        <form action="pg1_Personal_details_page.php" method="POST">
           <div class="form1">
             <div class="personal-details">
                 <span class ="title">Personal details</span>

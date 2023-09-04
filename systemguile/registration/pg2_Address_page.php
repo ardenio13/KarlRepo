@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="container">
         <header>Registration form</header>
 
-        <form action="pg3_Educationalbg_page.php" method="POST">
+        <form action="pg2_Address_page.php" method="POST">
           <div class="form1">
             <div class="personal-details">
                 <span class ="title">Address details</span>
@@ -63,7 +63,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <div class="input-group">
                         <label>City</label> 
-                        <select name="province" id="province">Select City
+                        <select name="city" id="city">Select City
+                        <option value="marikina">marikina</option>
+                            <option value="bacoor">bacoor</option>
                         </select>
                     </div>
 

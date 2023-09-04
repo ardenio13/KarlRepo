@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $_SESSION['senior'] = $_POST['senior'];
     $_SESSION['college'] = $_POST['college'];
   
-    header('Location: .php'); 
+    header('Location: dataconnection.php'); 
     exit();
 }
 ?>
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="container">
         <header>Registration form</header>
 
-        <form action="pg2_Address.php" method="POST">
+        <form action="pg3_Educationalbg_page.php" method="POST">
           <div class="form1">
             <div class="personal-details">
                 <span class ="title">Educational Background details</span>
