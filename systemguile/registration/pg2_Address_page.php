@@ -54,24 +54,48 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
 
                     <div class="input-group">
-                        <label>Province</label> 
-                        <select name="province" id="province">Select province
+                        <label for ="province">Province</label> 
+                        <select name="province" id="province">
+                            <option value="">Select Province</option> 
                             <option value="NCR">NCR</option>
                             <option value="Cavite">Cavite</option>
                         </select>
                     </div>
 
                     <div class="input-group">
-                        <label>City</label> 
-                        <select name="city" id="city">Select City
-                        <option value="marikina">marikina</option>
-                            <option value="bacoor">bacoor</option>
+                        <label for="city">City</label> 
+                        <select name="city" id="city">
                         </select>
                     </div>
 
                 </div> 
             </div>
           </div>
+
+          <script>
+        // AJAX request function
+        function filterCitiesByProvince(province) {
+            $.ajax({
+                url: 'filter_process.php', 
+                type: 'GET',
+                data: { province: province },
+                success: function(response) {
+                    $('#city').html(response);
+                }
+            });
+        }
+
+        // Call the filter function when province selection changes
+        $('#province').change(function() {
+            var selectedProvince = $(this).val();
+            filterCitiesByProvince(selectedProvince);
+        });
+
+       
+        filterCitiesByProvince($('#province').val());
+                </script>
+
+
 
                 <button class="button-primary" type ="submit" style ="margin-top:50px;">Next</button> 
         </form>
