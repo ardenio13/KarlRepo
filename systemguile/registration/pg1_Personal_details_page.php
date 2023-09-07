@@ -58,12 +58,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <div class="input-group">
                         <label>Contact</label> 
-                        <input type="text" placeholder ="Enter your contact" name="contact"reqiured>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9]{11}"reqiured>
                     </div>
 
                     <div class="input-group">
                         <label>Email</label> 
-                        <input type="text" placeholder ="Enter your Email" name="email">
+                        <input type="text" placeholder ="Enter your Email" name="email" id="email">
                     </div>
 
                     <div class="input-group">
@@ -86,6 +86,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
           </div>
                 <button class="button-primary" type ="submit">Next</button> 
         </form>
+
+        
+        <script>
+        function validateForm() {
+            const email = document.getElementById('email').value;
+            const contact = document.getElementById('contact').value;
+
+            if (!isValidEmail(email) || !isValidPhoneNumber(contact)) {
+            alert('Please fill in all fields with valid data.');
+            return false;
+            }
+            return true;
+        }
+
+        function isValidEmail(email) {
+            // Use a regular expression to validate the email format
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function isValidPhoneNumber(contact) {
+            // Use a regular expression to validate a 10-digit contact number
+            const phoneRegex = /^[0-9]{11}$/;
+            return phoneRegex.test(contact);
+        }
+</script>
     </div>
 </body>
 </html>
