@@ -1,3 +1,11 @@
+<?php
+session_start();
+
+if (isset($_SESSION['userid'])) {
+      header("location: test_dashboard.php");
+      
+    }
+?>
 <!DOCTYPE html>
 
 <html>
@@ -10,6 +18,11 @@
 <body>
     <div class="container">
         <h2>Login</h2>
+        <?php if(isset($_GET['error'])){ ?>
+            <div class="error">
+                <p><?php echo $_GET['error'] ?></p>
+            </div>
+        <?php } ?>
         <form>
         <div>
             <label>Username</label>
