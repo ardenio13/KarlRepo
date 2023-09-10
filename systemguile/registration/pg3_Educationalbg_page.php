@@ -45,18 +45,45 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <input type="text" placeholder ="Enter School Name" name="senior">
                     </div>
 
-                    <div class="input-group">
+                    <div class="input-group" id ="college_course">
                         <label>College</label> 
                         <input type="text" placeholder ="Enter School Name" name="college">
                         <input type="text" placeholder ="Enter Course" name="course">
+                        <button id="addinfo" style >Add +</button>
                     </div>
--
-                </div> 
             </div>
           </div>
+                
 
                 <button class="button-primary" type ="submit" style ="margin-top:50px;">Next</button> 
         </form>
+        <script>
+
+        // Function to add new input elements
+        function addInputs() {
+            var container = document.getElementById("college_course");
+
+            // Create new inputs
+            var input1 = document.createElement("input");
+            input1.type = "text";
+            input1.name = "addcollege";
+            input1.id = "addcollege"; 
+            input1.placeholder = "Enter your School name"
+            container.appendChild(input1);
+
+          
+            var input2 = document.createElement("input");
+            input2.type = "text";
+            input2.name = "addcourse";
+            input2.id = "addcourse"
+            input2.placeholder = "Enter your Course"
+            container.appendChild(input2);
+        }
+
+        // This function will trigger if you click the add button
+        var addButton = document.getElementById("addinfo");
+        addButton.addEventListener("click", addInputs);
+    </script>
     </div>
 </body>
 </html>

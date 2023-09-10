@@ -96,7 +96,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </script>
 
 
-
                 <button class="button-primary" type ="submit" style ="margin-top:50px;">Next</button> 
         </form>
     </div>

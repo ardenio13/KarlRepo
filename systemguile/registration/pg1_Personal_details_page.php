@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <div class="input-group">
                         <label>Email</label> 
-                        <input type="text" placeholder ="Enter your Email" name="email" id="email">
+                        <input type="email" placeholder ="Enter your Email" name="email" id="email">
                     </div>
 
                     <div class="input-group">
