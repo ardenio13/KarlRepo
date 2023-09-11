@@ -1,12 +1,20 @@
 <?php
+$host = "localhost";
+$username = 'root';
+$password = "";
+$database = "locations_db";
 
-require_once('../connection/db_connection.php');
+$conn = new mysqli($host, $username, $password, $database);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
 
 $province = $_GET['province'];
 
 // Fetch cities from the database based on the selected province
 $query = "SELECT city FROM cities WHERE province = '$province'";
-$result = $conn->query($query);
+$result = $conn->query($query); 
 
 // Generate HTML options for filtered cities
 $options = '';
@@ -24,3 +32,4 @@ $conn->close();
 // Send the HTML options back to the frontend
 echo $options;
 ?>
+

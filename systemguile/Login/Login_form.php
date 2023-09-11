@@ -35,7 +35,7 @@ if (isset($_SESSION['userid'])) {
         </div>
 
         <button class ="btn-login" type ="submit">Login</button> 
-        <p style="margin-top:10px;">Don't have an account?<a href="">Register</a></p>
+        <p style="margin-top:10px;">Don't have an account?<a href="../registration/pg1_Personal_details_page.php">Register</a></p>
         
         </form>
     </div> 

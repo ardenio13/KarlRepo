@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
 <title>Registration form</title>
 <link rel ="stylesheet" href ="registration_style.css">
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -70,9 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 </div> 
             </div>
-          </div>
-
-          <script>
+            <script>
         // AJAX request function
         function filterCitiesByProvince(province) {
             $.ajax({
@@ -94,6 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
        
         filterCitiesByProvince($('#province').val());
                 </script>
+          </div>
 
 
                 <button class="button-primary" type ="submit" style ="margin-top:50px;">Next</button> 

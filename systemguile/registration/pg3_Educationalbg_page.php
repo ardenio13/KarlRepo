@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <label>College</label> 
                         <input type="text" placeholder ="Enter School Name" name="college">
                         <input type="text" placeholder ="Enter Course" name="course">
-                        <button id="addinfo" style >Add +</button>
+                        <a  class="button-danger" id="addinfo">Add +</a> 
                     </div>
             </div>
           </div>
