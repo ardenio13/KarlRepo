@@ -1,14 +1,6 @@
 <?php
-$host = "localhost";
-$username = 'root';
-$password = "";
-$database = "locations_db";
 
-$conn = new mysqli($host, $username, $password, $database);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
+require_once('../connection/db_connection.php');
 
 $province = $_GET['province'];
 
