@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <div class="input-group">
                         <label>Contact</label> 
-                        <input type="tel" id="phone" name="phone" pattern="[0-9]{11}"reqiured>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your contact number" pattern="[0-9]{11}"reqiured>
                     </div>
 
                     <div class="input-group">
@@ -71,14 +71,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <input type="text" placeholder ="Enter your username" name="user">
                     </div>
 
-                    <div class="input-group">
+                    <div class="input-group" style ="margin-right:310px;">
                         <label>Password</label> 
-                        <input type="text" placeholder ="Enter your password" name="pass">
-                    </div>
-
-                    <div class="input-group">
-                        <label>Confirm Password</label> 
-                        <input type="text" placeholder ="Enter your Password" name="conpass">
+                        <input type="password" placeholder ="Enter your password" name="pass" >
                     </div>
                     
                 </div> 

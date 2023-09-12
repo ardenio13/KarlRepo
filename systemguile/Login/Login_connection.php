@@ -3,18 +3,19 @@ session_start();
 
 require_once('../connection/db_connection.php');
 
+
 if ( isset($_POST['user']) && isset($_POST['pass']) ) {
   $user = $_POST['user'];
   $pass = $_POST['pass'];
 
   if(empty($user)){
-      header("Location:Login_form.php?error=username is required");
+      header("Location: Login_form.php?error=username is required");
       exit();
   }else if(empty($pass)){
-      header("Location:Login_form.php?error=password is required");
+      header("Location: Login_form.php?error=password is required");
       exit();
   }else{
-      $sql = "SELECT * FROM users_tbl WHERE user = '$user' AND pass = '$pass'";
+      $sql = "SELECT * FROM data_tbl WHERE user = '$user' AND pass = '$pass'";
       $result = mysqli_query($conn, $sql);
 
       if(mysqli_num_rows($result)){
@@ -22,10 +23,10 @@ if ( isset($_POST['user']) && isset($_POST['pass']) ) {
 
           $_SESSION['user'] = $row['user'];
           $_SESSION['userid'] = $row['id'];
-          header("Location: dashboard.php");
+          header("Location: test_dashboard.php");
           exit();
       }else{
-          header("Location:Login_form.php?error=incorrect email or password!");
+          header("Location: Login_form.php?error=incorrect email or password!");
           exit();
       }
   }

@@ -23,15 +23,15 @@ if (isset($_SESSION['userid'])) {
                 <p><?php echo $_GET['error'] ?></p>
             </div>
         <?php } ?>
-        <form>
+        <form action ="Login_connection.php" method = "post">
         <div>
             <label>Username</label>
-            <input type="text" name="userr" id ="userr" placeholder ="Username">
+            <input type="text" name="user" id ="user" placeholder ="Username" class="user">
         </div>
 
         <div>
              <label>Password</label>
-            <input type="passs" id ="passs" id ="passs" placeholder ="Password">
+            <input type="password" id ="pass" name ="pass" class="pass" placeholder ="Password">
         </div>
 
         <button class ="btn-login" type ="submit">Login</button> 
