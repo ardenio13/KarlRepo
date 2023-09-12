@@ -49,11 +49,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
 
                     <div class="input-group">
-                        <label>Country</label> 
-                        <input type="text" placeholder ="Enter your Country" name="country">
-                    </div>
-
-                    <div class="input-group">
                         <label for ="province">Province</label> 
                         <select name="province" id="province">
                             <option value="">Select Province</option> 
@@ -62,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         </select>
                     </div>
 
-                    <div class="input-group">
+                    <div class="input-group" style ="margin-right:310px;">
                         <label for="city">City</label> 
                         <select name="city" id="city">
                         </select>

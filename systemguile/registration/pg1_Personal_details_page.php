@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <div class="input-group">
                         <label>Contact</label> 
-                        <input type="tel" id="phone" name="phone" placeholder="Enter your contact number" pattern="[0-9]{11}"reqiured>
+                        <input type="tel" id="contact" name="contac" maxlength="11" placeholder="Enter your contact number"  value="+63" pattern="[0-9]{11}"reqiured>
                     </div>
 
                     <div class="input-group">
@@ -82,8 +82,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <button class="button-primary" type ="submit">Next</button> 
         </form>
 
-        
+    
         <script>
+            //script for validation contact and email
         function validateForm() {
             const email = document.getElementById('email').value;
             const contact = document.getElementById('contact').value;
@@ -107,6 +108,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             return phoneRegex.test(contact);
         }
 </script>
+
+        <script>
+        // Get reference to the input element
+        const contact = document.getElementById('contact');
+
+        // Listen for input changes and automatically format
+        contact.addEventListener('input', function () {
+            // Get the current input value
+            let inputValue = contact.value;
+
+            // Check if the input contains "+63" followed by '9'
+            if (inputValue.includes("+639") && inputValue.includes('9')) {
+                // Replace "+63" with "09"
+                inputValue = inputValue.replace("+639", "09");
+            }
+
+            if (inputValue.includes("+6309") && inputValue.includes('09')) {
+                inputValue = inputValue.replace("+6309", "09");
+            }
+
+
+            // Update the input value with the formatted value
+            contact.value = inputValue;
+        });
+ </script>
+
     </div>
 </body>
 </html>
