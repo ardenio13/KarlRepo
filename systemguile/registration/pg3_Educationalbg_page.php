@@ -58,26 +58,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <button class="button-primary" type ="submit" style ="margin-top:50px;">Next</button> 
         </form>
         <script>
-
         // Function to add new input elements
         function addInputs() {
             var container = document.getElementById("college_course");
+
+            // Create a container div for the inputs
+            var inputContainer = document.createElement("div");
 
             // Create new inputs
             var input1 = document.createElement("input");
             input1.type = "text";
             input1.name = "addcollege";
             input1.id = "addcollege"; 
-            input1.placeholder = "Enter your School name"
-            container.appendChild(input1);
+            input1.placeholder = "Enter your School name";
+            inputContainer.appendChild(input1);
 
-          
             var input2 = document.createElement("input");
             input2.type = "text";
             input2.name = "addcourse";
-            input2.id = "addcourse"
-            input2.placeholder = "Enter your Course"
-            container.appendChild(input2);
+            input2.id = "addcourse";
+            input2.placeholder = "Enter your Course";
+            inputContainer.appendChild(input2);
+
+            var deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+            deleteButton.class= "button-danger";
+            deleteButton.style= " background-color: red;  color: white;padding: 10px 15px;text-decoration: none;text-align: center; margin-left:10px;;"
+            deleteButton.addEventListener("click", function() {
+                container.removeChild(inputContainer);
+            });
+            inputContainer.appendChild(deleteButton);
+
+            container.appendChild(inputContainer);
         }
 
         // This function will trigger if you click the add button

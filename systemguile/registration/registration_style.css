@@ -108,3 +108,16 @@ select {
     width: 150px;
     
 }
+
+
+.button-danger {
+    background-color: #199319;
+    color: white;
+    padding: 15px 25px;
+    text-decoration: none;
+    text-align: center;
+  }
+  
+  .button-danger:hover {
+    background-color: magenta;
+  }

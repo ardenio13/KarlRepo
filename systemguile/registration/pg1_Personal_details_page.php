@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <div class="input-group">
                         <label>Contact</label> 
-                        <input type="tel" id="contact" name="contac" maxlength="11" placeholder="Enter your contact number"  value="+63" pattern="[0-9]{11}"reqiured>
+                        <input type="tel" id="contact" name="contact" maxlength="11" placeholder="Enter your contact number"  value="+63" pattern="[0-9]{11}"reqiured>
                     </div>
 
                     <div class="input-group">
