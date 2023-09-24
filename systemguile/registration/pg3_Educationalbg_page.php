@@ -7,6 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $_SESSION['junior'] = $_POST['junior'];
     $_SESSION['senior'] = $_POST['senior'];
     $_SESSION['college'] = $_POST['college'];
+    $_SESSION['course'] = $_POST['course'];
   
     header('Location: dataconnection.php'); 
     exit();
@@ -47,8 +48,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <div class="input-group" id ="college_course">
                         <label>College</label> 
-                        <input type="text" placeholder ="Enter School Name" name="college">
-                        <input type="text" placeholder ="Enter Course" name="course">
+                        <input type="text" placeholder ="Enter School Name" name="college[]">
+                        <input type="text" placeholder ="Enter Course" name="course[]">
                         <a  class="button-danger" id="addinfo">Add +</a> 
                     </div>
             </div>
@@ -68,15 +69,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Create new inputs
             var input1 = document.createElement("input");
             input1.type = "text";
-            input1.name = "addcollege";
-            input1.id = "addcollege"; 
+            input1.name = "college[]";
             input1.placeholder = "Enter your School name";
             inputContainer.appendChild(input1);
 
             var input2 = document.createElement("input");
             input2.type = "text";
-            input2.name = "addcourse";
-            input2.id = "addcourse";
+            input2.name = "course[]";
             input2.placeholder = "Enter your Course";
             inputContainer.appendChild(input2);
 

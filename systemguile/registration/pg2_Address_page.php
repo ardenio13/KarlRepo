@@ -51,8 +51,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                         <div class="input-group">
                             <label for="province">Province</label>
-                            <select name="province" id="province">
+                            <select name="province" id="province">Select Province
                                 <option value="">Select Province</option>
+                          
                                 <!-- Province options will be populated dynamically -->
                             </select>
                         </div>
@@ -64,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                                 <!-- City options will be populated dynamically -->
                             </select>
                         </div>
-
+                                <button class="button-primary" type ="submit">Next</button> 
                     </div>
                 </div>
             </div>
