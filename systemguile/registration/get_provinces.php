@@ -2,7 +2,7 @@
 require_once('../connection/db_connection.php');
 
 // Fetch provinces from the database
-$query = "SELECT DISTINCT province FROM cities"; // Adjust the query based on your database structure
+$query = "SELECT DISTINCT province FROM cities_tbl"; // Adjust the query based on your database structure
 $result = $conn->query($query);
 
 // Generate HTML options for the Province dropdown

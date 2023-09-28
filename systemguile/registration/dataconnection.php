@@ -19,26 +19,24 @@ $courses = $_SESSION['course'];
 $baranggay = $_SESSION['baranggay'];
 $zip = $_SESSION['zip'];
 $street = $_SESSION['street'];
-$country = $_SESSION['country'];
 $city = $_SESSION['city'];
 $province = $_SESSION['province'];
 
 $student_id = time();
 
 
-
-for ($i = 0; $i < count($colleges); $i++ ) {
+for ($i = 0; $i < count($colleges); $i++) {
     $college = mysqli_real_escape_string($conn, $colleges[$i]);
     $course = mysqli_real_escape_string($conn, $courses[$i]);
 
     // Insert the values into the database along with the student ID.
-    $sql = "INSERT INTO educbg_tbl (college, course, student_id)
-    VALUES ('$college', '$course', '$student_id')";
+    $sql = "INSERT INTO educbg_tbl (fullname, college, course, student_id)
+            VALUES ('$fullname','$college', '$course', '$student_id')";
     mysqli_query($conn, $sql);
 }
 
-$sql = "INSERT INTO data_tbl (fullname, bday, gender, age, contact, email, user, pass, elem, junior, senior, baranggay, street, country, zip, city, province, student_id)
-        VALUES ('$fullname', '$bday', '$gender', '$age', '$contact', '$email', '$user', '$pass','$elem,', '$junior', '$senior', '$baranggay', '$street', '$country', '$zip', '$city', '$province', '$student_id')";
+$sql = "INSERT INTO data_tbl (fullname, bday, gender, age, contact, email, user, pass, elem, junior, senior, baranggay, street, zip, city, province, student_id)
+        VALUES ('$fullname', '$bday', '$gender', '$age', '$contact', '$email', '$user', '$pass','$elem,', '$junior', '$senior', '$baranggay', '$street', '$zip', '$city', '$province', '$student_id')";
 
 if ($conn->query($sql) === TRUE){
    echo "Registration Successfully";

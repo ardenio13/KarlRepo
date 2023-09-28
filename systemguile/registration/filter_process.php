@@ -5,7 +5,7 @@ require_once('../connection/db_connection.php');
 $province = $_GET['province'];
 
 // Fetch cities from the database based on the selected province
-$query = "SELECT city FROM cities WHERE province = '$province'";
+$query = "SELECT city FROM cities_tbl WHERE province = '$province'";
 $result = $conn->query($query);
 
 // Generate HTML options for filtered cities
