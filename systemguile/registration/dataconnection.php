@@ -9,7 +9,7 @@ $age = $_SESSION['age'];
 $gender = $_SESSION['gender'];
 $contact = $_SESSION['contact'];
 $email = $_SESSION['email'];
-$user = $_SESSION['user'];
+$student_user = $_SESSION['student_user'];
 $pass = $_SESSION['pass'];
 $elem = $_SESSION['elem'];
 $junior = $_SESSION['junior'];
@@ -35,8 +35,11 @@ for ($i = 0; $i < count($colleges); $i++) {
     mysqli_query($conn, $sql);
 }
 
-$sql = "INSERT INTO data_tbl (fullname, bday, gender, age, contact, email, user, pass, elem, junior, senior, baranggay, street, zip, city, province, student_id)
-        VALUES ('$fullname', '$bday', '$gender', '$age', '$contact', '$email', '$user', '$pass','$elem,', '$junior', '$senior', '$baranggay', '$street', '$zip', '$city', '$province', '$student_id')";
+$sql = "INSERT INTO data_tbl (fullname, bday, gender, age, contact, email, elem, junior, senior, baranggay, street, zip, city, province, student_id)
+        VALUES ('$fullname', '$bday', '$gender', '$age', '$contact', '$email', '$elem', '$junior', '$senior', '$baranggay', '$street', '$zip', '$city', '$province', '$student_id')";
+
+$sql = "INSERT INTO account_tbl (student_user, pass, student_id)
+        VALUES ('$student_user', '$pass', '$student_id')";
 
 if ($conn->query($sql) === TRUE){
    echo "Registration Successfully";

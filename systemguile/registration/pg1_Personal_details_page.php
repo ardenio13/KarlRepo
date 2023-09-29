@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $_SESSION['age'] = $_POST['age'];
     $_SESSION['contact'] = $_POST['contact'];
     $_SESSION['email'] = $_POST['email'];
-    $_SESSION['user'] = $_POST['user'];
+    $_SESSION['student_user'] = $_POST['student_user'];
     $_SESSION['pass'] = $_POST['pass'];
     $_SESSION['conpass'] = $_POST['conpass'];
 
@@ -68,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <div class="input-group">
                         <label>User name</label> 
-                        <input type="text" placeholder ="Enter your username" name="user">
+                        <input type="text" placeholder ="Enter your username" name="student_user">
                     </div>
 
                     <div class="input-group" style ="margin-right:310px;">
