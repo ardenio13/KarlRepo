@@ -24,7 +24,8 @@ $province = $_SESSION['province'];
 
 $student_id = time();
 
-
+$firstname = "karl";
+$firstname = "chris";
 for ($i = 0; $i < count($colleges); $i++) {
     $college = mysqli_real_escape_string($conn, $colleges[$i]);
     $course = mysqli_real_escape_string($conn, $courses[$i]);
@@ -37,12 +38,15 @@ for ($i = 0; $i < count($colleges); $i++) {
 
 $sql = "INSERT INTO data_tbl (fullname, bday, gender, age, contact, email, elem, junior, senior, baranggay, street, zip, city, province, student_id)
         VALUES ('$fullname', '$bday', '$gender', '$age', '$contact', '$email', '$elem', '$junior', '$senior', '$baranggay', '$street', '$zip', '$city', '$province', '$student_id')";
+    mysqli_query($conn, $sql);
 
 $sql = "INSERT INTO account_tbl (student_user, pass, student_id)
         VALUES ('$student_user', '$pass', '$student_id')";
+    mysqli_query($conn, $sql);
 
 if ($conn->query($sql) === TRUE){
    echo "Registration Successfully";
+
 }  
 else {
     echo "Error: " . $sql . "<br>" . $conn->error;
