@@ -23,7 +23,7 @@ if ( isset($_POST['user']) && isset($_POST['pass']) ) {
 
           $_SESSION['user'] = $row['user'];
           $_SESSION['userid'] = $row['id'];
-          header("Location: test_dashboard.php");
+          header("location: ../Dashboard/test_dashboard.php");
           exit();
       }else{
           header("Location: Login_form.php?error=incorrect email or password!");

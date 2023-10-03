@@ -34,11 +34,11 @@ $conn->close();
 </head>
 <body>
     <header>
-        <h1>WELCOME<?php echo "$user"?></h1> <a href="logout.php">logout</a>
+        <h1>WELCOME ADMIN</h1> <a href="logout.php">logout</a>
     </header>
     <nav>
         <ul>
-            <li><a class="student-reg" href="students number">Registered Students</a></li>
+            <li><a class="student-reg" href="student_table.php">Registered Students</a></li>
         </ul>
     </nav>
     <div class="container">
