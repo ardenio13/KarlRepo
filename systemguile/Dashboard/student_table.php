@@ -6,6 +6,7 @@ require_once('../fetch_tables/fetch_data_tbl.php');
 <html>
 <head>
     <title>Database Table</title>
+    <link rel ="stylesheet" href ="student_table_style.css">
 </head>
 <body>
     <table>
@@ -47,6 +48,12 @@ require_once('../fetch_tables/fetch_data_tbl.php');
             echo "<td>" . $row['city'] . "</td>";
             echo "<td>" . $row['province'] . "</td>";
             echo "<td>" . $row['student_id'] . "</td>";
+
+            // Edit button
+            echo "<td><button href='edit.php?id=" . $row['id'] . "'>Edit</button></td>";
+
+            // Delete button
+            echo "<td><button href='delete.php?id=" . $row['id'] . "'>Delete</button></td>";
             echo "</tr>";
         }
         ?>
