@@ -30,7 +30,7 @@ $conn->close();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel ="stylesheet" href ="student_table_style.css">
+    <link rel ="stylesheet" href ="dashboard_style.css">
 </head>
 <body>
     <header>
