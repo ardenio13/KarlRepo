@@ -18,7 +18,7 @@ if (isset($_GET['id'])) {
         // Execute the DELETE statement
         if ($stmt->execute()) {
         
-            header("Location: test.php"); // Redirect back to your table 
+            header("Location: student_table.php"); // Redirect back to your table 
             exit();
         } else {
             // Handle the error if the deletion fails

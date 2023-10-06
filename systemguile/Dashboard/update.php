@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Update the record in the database
     $query = "UPDATE data_tbl SET fullname = '$fullname', bday = '$bday', age = '$age' WHERE id = $id";
-    // Update other fields in the query as needed
+ 
 
     if ($conn->query($query)) {
         header("location: student_table.php");

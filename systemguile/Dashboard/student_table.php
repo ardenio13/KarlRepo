@@ -31,8 +31,7 @@ if (isset($result)) {
                     <th>city</th>
                     <th>province</th>
                     <th>student_id</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
+                 
                 </tr>
                 <?php
                 // Loop through the rows and display data
@@ -54,6 +53,9 @@ if (isset($result)) {
                     echo "<td>" . $row['city'] . "</td>";
                     echo "<td>" . $row['province'] . "</td>";
                     echo "<td>" . $row['student_id'] . "</td>";
+                    
+                    //View button
+                    echo "<td><a href='view.php?id=" . $row['id'] . "'>View</a></td>";
 
                     // Edit button
                     echo "<td><a href='edit.php?id=" . $row['id'] . "'>Edit</a></td>";
