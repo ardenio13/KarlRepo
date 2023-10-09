@@ -7,7 +7,7 @@ if (isset($_GET['id'])) {
 
     // Fetch the record from the database using the 'id'
     $query = "SELECT * FROM data_tbl WHERE id = $id";
-    $result = $conn->query($query); // Remove the extra '=' here
+    $result = $conn->query($query); 
 
     if ($result && $result->num_rows > 0) {
         $row = $result->fetch_assoc();
@@ -15,6 +15,7 @@ if (isset($_GET['id'])) {
         <!DOCTYPE html>
         <html>
         <head>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
             <title>Edit Record</title>
         </head>
         <body>

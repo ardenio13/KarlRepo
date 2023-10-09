@@ -6,15 +6,20 @@ if (isset($result)) {
     if ($result->num_rows > 0) {
         // Start the HTML document
         ?>
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <title>Database Table</title>
-            <link rel="stylesheet" href="student_table_style.css">
-        </head>
-        <body>
-            <table>
-                <tr>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Student Details</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container" style ="margin-right:520px;">
+    <h2>Student Details</h2>
+    <table class="table table-bordered" >
+      <thead>
+        <tr>
                     <th>id</th>
                     <th>fullname</th>
                     <th>bday</th>
@@ -31,9 +36,11 @@ if (isset($result)) {
                     <th>city</th>
                     <th>province</th>
                     <th>student_id</th>
-                 
-                </tr>
-                <?php
+                    <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+      <?php
                 // Loop through the rows and display data
                 while ($row = $result->fetch_assoc()) {
                     echo "<tr>";
@@ -55,21 +62,23 @@ if (isset($result)) {
                     echo "<td>" . $row['student_id'] . "</td>";
                     
                     //View button
-                    echo "<td><a href='view.php?id=" . $row['id'] . "'>View</a></td>";
+                    echo "<td><a class='btn btn-success' href='view.php?id=" . $row['id'] . "'><i class='glyphicon glyphicon-eye'></i>View</a></td>";
 
                     // Edit button
-                    echo "<td><a href='edit.php?id=" . $row['id'] . "'>Edit</a></td>";
+                    echo "<td><a class='btn btn-primary' href='edit.php?id=" . $row['id'] . "'><i class='glyphicon glyphicon-pencil'></i>Edit</a></td>";
 
                     // Delete button
-                    echo "<td><a href='delete.php?id=" . $row['id'] . "' onclick='return confirm(\"Are you sure you want to delete this record?\");'>Delete</a></td>";
+                    echo "<td><a  class='btn btn-danger' href='delete.php?id=" . $row['id'] . "' onclick='return confirm(\"Are you sure you want to delete this record?\");'><i class='glyphicon glyphicon-trash'></i>Delete</a></td>";
                     echo "</tr>";
                 }
                 ?>
-            </table>
-        </body>
-        </html>
-        <?php
-    } else {
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
+<?php
+   }  else {
         echo "Record not found.";
     }
 } else {
