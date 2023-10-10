@@ -1,6 +1,14 @@
-
 <?php
+session_start();
 require_once('../connection/db_connection.php');
+
+// Check if the user is logged in (session is active)
+if (!isset($_SESSION['user'])) {
+    header("Location: ../../index.php"); // Redirect to the login page
+    exit();
+}
+
+$user = $_SESSION['user'];
 
 // Define your SQL query to count registered students
 $sql = "SELECT COUNT(*) AS fullname FROM data_tbl"; 
@@ -24,17 +32,13 @@ if ($result) {
 $conn->close();
 ?>
 <!DOCTYPE html>
-<html>
-
-<head>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <link rel ="stylesheet" href ="dashboard_style.css">
 </head>
 <body>
     <header>
-        <h1>WELCOME ADMIN</h1> <a href="logout.php">logout</a>
+        <h1>WELCOME <?php echo "$user"?></h1> <a href="../Login/logout.php">Logout</a>
     </header>
     <nav>
         <ul>
@@ -43,11 +47,9 @@ $conn->close();
     </nav>
     <div class="container">
         <div id="widget1" class="widget">
-            <h2><?php echo"$totalusers"?></h2>
+            <h2><?php echo "$totalusers"?></h2>
             <p>Registered Students</p>
         </div>
-
     </div>
 </body>
 </html>
-
