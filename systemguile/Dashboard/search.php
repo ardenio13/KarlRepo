@@ -8,9 +8,15 @@ if (isset($_GET['search'])) {
     $searchQuery = mysqli_real_escape_string($conn, $searchQuery);
     $searchQuery = '%' . $searchQuery . '%'; // Add wildcards to perform a partial search
     
-    $query = "SELECT * FROM data_tbl WHERE fullname LIKE '$searchQuery'";
+    $query = "SELECT * FROM data_tbl WHERE fullname LIKE '$searchQuery'
+              OR gender LIKE '$searchQuery'
+              OR bday LIKE '$searchQuery'
+              OR contact LIKE '$searchQuery'
+              OR email LIKE '$searchQuery'  
+              OR age LIKE '$searchQuery'";
     $result = mysqli_query($conn, $query);
 
+    
     if ($result->num_rows > 0) {
         // Display the search results in a table format
         while ($row = $result->fetch_assoc()) {
@@ -22,14 +28,6 @@ if (isset($_GET['search'])) {
             echo "<td>" . $row['gender'] . "</td>";
             echo "<td>" . $row['contact'] . "</td>";
             echo "<td>" . $row['email'] . "</td>";
-            echo "<td>" . $row['elem'] . "</td>";
-            echo "<td>" . $row['junior'] . "</td>";
-            echo "<td>" . $row['senior'] . "</td>";
-            echo "<td>" . $row['baranggay'] . "</td>";
-            echo "<td>" . $row['zip'] . "</td>";
-            echo "<td>" . $row['street'] . "</td>";
-            echo "<td>" . $row['city'] . "</td>";
-            echo "<td>" . $row['province'] . "</td>";
             echo "<td>" . $row['student_id'] . "</td>";
             
             //View button

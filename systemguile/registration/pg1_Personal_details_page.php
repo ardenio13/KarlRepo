@@ -41,8 +41,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="input-group">
                         <label>Gender</label> 
                         <select name="gender" id="gender">
-                            <option>Male</option>
-                            <option>Female</option>
+                            <option>M</option>
+                            <option>F</option>
                         </select>
                     </div>
 

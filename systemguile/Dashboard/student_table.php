@@ -15,10 +15,10 @@ if (isset($result)) {
             <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         </head>
         <body>
-            <div class="container" style="margin-right: 520px;">
+            <div class="container" >
                 <h2>Student Details</h2>
                 <form>
-                    <div class="input-group" style="padding:10px;">
+                    <div class="input-group" style="padding:10px; margin-left:950px;">
                         <input type="text" class="form-control" id="searchInput" placeholder="Search for a student">
                         <span class="input-group-btn">
                         </span>
@@ -27,22 +27,14 @@ if (isset($result)) {
                 <table class="table table-bordered">
                     <thead>
                         <tr>
-                            <th>id</th>
-                            <th>fullname</th>
-                            <th>bday</th>
-                            <th>age</th>
-                            <th>gender</th>
-                            <th>contact</th>
-                            <th>email</th>
-                            <th>elem</th>
-                            <th>junior</th>
-                            <th>senior</th>
-                            <th>baranggay</th>
-                            <th>zip</th>
-                            <th>street</th>
-                            <th>city</th>
-                            <th>province</th>
-                            <th>student_id</th>
+                            <th style ="padding:10px; text-align:center;">ID</th>
+                            <th style ="text-align:center;">Full Name</th>
+                            <th style ="padding:10px; text-align:center;">Birthday</th>
+                            <th style ="padding:10px; text-align:center;">Age</th>
+                            <th style ="padding:10px; text-align:center;">Gender</th>
+                            <th style ="text-align:center;">Contact Number</th>
+                            <th style ="padding:10px; text-align:center;">E-mail</th>
+                            <th>Student_id</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -58,14 +50,6 @@ if (isset($result)) {
                             echo "<td>" . $row['gender'] . "</td>";
                             echo "<td>" . $row['contact'] . "</td>";
                             echo "<td>" . $row['email'] . "</td>";
-                            echo "<td>" . $row['elem'] . "</td>";
-                            echo "<td>" . $row['junior'] . "</td>";
-                            echo "<td>" . $row['senior'] . "</td>";
-                            echo "<td>" . $row['baranggay'] . "</td>";
-                            echo "<td>" . $row['zip'] . "</td>";
-                            echo "<td>" . $row['street'] . "</td>";
-                            echo "<td>" . $row['city'] . "</td>";
-                            echo "<td>" . $row['province'] . "</td>";
                             echo "<td>" . $row['student_id'] . "</td>";
 
                             // View button
@@ -81,7 +65,7 @@ if (isset($result)) {
                         ?>
                     </tbody>
                 </table>
-                <a class="btn btn-primary" href="#"><i class='glyphicon glyphicon-plus'></i>Add student</a>
+                <a class="btn btn-primary" href="add_student.php"><i class='glyphicon glyphicon-plus'></i>Add student</a>
             </div>
 
             <script>

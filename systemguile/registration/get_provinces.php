@@ -19,5 +19,4 @@ $conn->close();
 
 // Send the HTML options back to the frontend
 echo $options;
-?>s
 ?>
