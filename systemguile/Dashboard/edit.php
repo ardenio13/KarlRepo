@@ -22,20 +22,54 @@ if (isset($_GET['id'])) {
             <h2>Edit Record</h2>
             
             <!-- Hidden div containing the edit form (displayed by default) -->
-            <div id="editForm">
+            <div id="container">
                 <form method="POST" action="update.php">
+                    <div class = "form-group">
                     <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-                    Full Name: <input type="text" name="fullname" value="<?php echo $row['fullname']; ?>"><br>
+                    Full Name: <input type="text" class ="form-control" name="fullname" value="<?php echo $row['fullname']; ?>"><br>
 
                     <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-                    Birthdate: <input type="text" name="bday" value="<?php echo $row['bday']; ?>"><br>
+                    Birthdate: <input type="text"  class ="form-control" name="bday" value="<?php echo $row['bday']; ?>"><br>
 
                     <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-                    Age: <input type="text" name="age" value="<?php echo $row['age']; ?>"><br>
+                    Age: <input type="text" name="age" class ="form-control" value="<?php echo $row['age']; ?>"><br>
+
+                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                   Gender: <input type="text" name="gender"  class ="form-control" value="<?php echo $row['gender']; ?>"><br>
+                    
+                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                    Contact: <input type="text" name="contact" class ="form-control" value="<?php echo $row['contact']; ?>"><br>
+
+                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                    E-mail: <input type="text" name="email" class ="form-control" value="<?php echo $row['email']; ?>"><br>
+
+                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                    Elementary: <input type="text" name="elem" class ="form-control" value="<?php echo $row['elem']; ?>"><br>
+
+                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                    Junior Highschool: <input type="text" name="junior" class ="form-control" value="<?php echo $row['junior']; ?>"><br>
+
+                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                    Senior Highschool: <input type="text" name="senior" class ="form-control" value="<?php echo $row['senior']; ?>"><br>
+
+                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                   Baranggay: <input type="text" name="baranggay" class ="form-control" value="<?php echo $row['baranggay']; ?>"><br>
+
+                   <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                   Zip: <input type="text" name="zip" class ="form-control" value="<?php echo $row['zip']; ?>"><br>
+
+                   <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                   Street: <input type="street" name="street" class ="form-control" value="<?php echo $row['street']; ?>"><br>
+
+                   <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                   City: <input type="city" name="city" class ="form-control" value="<?php echo $row['city']; ?>"><br>
+
+                   <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                   Province: <input type="province" name="province" class ="form-control" value="<?php echo $row['province']; ?>"><br>
                     <input type="submit" value="Update">
                 </form>
             </div>
-            
+        </div>
 
         </body>
         </html>

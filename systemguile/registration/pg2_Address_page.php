@@ -93,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 success: function (response) {
                     $('#city').html(response);
                 }
-            });
+            }); 
         }
 
         // Call the populate function when the page loads
