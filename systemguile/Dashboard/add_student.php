@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -6,8 +7,9 @@
     </head>
     <body>
      <div class ="container"> 
+    <form action="add.php" method="POST">
         <div class="form-group">
-            <div>
+           
                 <label for="fullname">Full name</label>
                 <input type="text" class="form-control" placeholder="Enter fullname" name= "fullname">
 
@@ -31,14 +33,15 @@
                 <label for="email">E-mail</label>
                 <input type="email" class="form-control"  id="email" placeholder="Enter E-mail" name="email">
 
+                
+                <label for="elem">Elementary school</label>
+                <input type="elem" class="form-control"  id="elem" placeholder="Enter School name" name="elem">
+
                 <label for="junior">Junior Highschool</label>
                 <input type="junior" class="form-control"  id="junior" placeholder="Enter School name" name="junior">
 
                 <label for="senior">Senior Highschool</label>
                 <input type="senior" class="form-control"  id="senior" placeholder="Enter School name" name="senior">
-
-                <label for="college">college</label>
-                <input type="colege" class="form-control"  id="email" placeholder="Enter School name" name="college">
 
                 <label for="baranggay">baranggay</label>
                 <input type="baranggay" class="form-control"  id="baranggay" placeholder="Enter baranggay" name="baranggay">
@@ -52,9 +55,21 @@
                 <label for="city">city</label>
                 <input type="city" class="form-control"  id="city" placeholder="Enter city" name="city">
                 
-                <label for="province">province</label>
-                <input type="province" class="form-control"  id="province" placeholder="Enter province" name="province">
+                <label for="province">Province</label>
+                <select name="province" id="province">Select Province
+                    <option value="">Select Province</option>
+                    <option >NCR</option>
+                    <option >CAVITE</option>
+                          
+                 </select>
 
+                 <label for="city">City</label>
+                  <select name="city" id="city">
+                     <option value="">Select City</option>
+                     <option>Marikina City</option>
+                     <option>Cavite City</option>
+    
+                 </select>
 
 
        
@@ -65,12 +80,10 @@
 
 
             </div>
-        </div>
+</form>
 
      
-
-    </div>
-    <script>
+<script>
             //script for validation contact and email
         function validateForm() {
             const email = document.getElementById('email').value;
@@ -120,5 +133,6 @@
             contact.value = inputValue;
         });
  </script>
+    </div>
     </body>
 </html> 
