@@ -17,11 +17,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $_SESSION['email'] = $_POST['email'];
     $_SESSION['student_user'] = $_POST['student_user'];
     $_SESSION['pass'] = $_POST['pass'];
-    $_SESSION['conpass'] = $_POST['conpass'];
+
+    // Handle image upload
+    if ($_FILES['imge']['error'] === 0) {
+        $uploadDir = 'uploads/'; // Create a directory for storing uploaded images
+        $uploadPath = $uploadDir . basename($_FILES['imge']['name']);
+
+        if (move_uploaded_file($_FILES['imge']['tmp_name'], $uploadPath)) {
+            $_SESSION['imge'] = $uploadPath; // Store the image path in the session
+        }
+    }
 
     header('Location: pg2_Address_page.php');
     exit();
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="container">
         <header>Registration form</header>
 
-        <form action="pg1_Personal_details_page.php" method="POST">
+        <form action="pg1_Personal_details_page.php" method="POST" enctype="multipart/form-data">
             <div class="form1">
                 <div class="personal-details">
                     <span class="title">Personal details</span>
@@ -83,6 +93,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div class="input-group" style="margin-right: 310px;">
                             <label>Password</label>
                             <input type="password" placeholder="Enter your password" name="pass">
+
+                        </div>
+                             <div class="input-group">
+                             <label>Profile Picture</label>
+                             <input type="file" name="imge" id="imge" accept="image/*">
                         </div>
                     </div>
                 </div>
@@ -91,6 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
 
         <script src="contact&email_validation.js"></script>
+
         <script>
             // JavaScript to calculate age and display it in the age input field
             document.querySelector('input[name="bday"]').addEventListener('change', function () {

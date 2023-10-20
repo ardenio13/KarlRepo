@@ -10,17 +10,7 @@
     <div class="container mt-5">
         <?php
         require_once('../fetch_tables/fetch_data_tbl.php');
-
-        $student_view_info = "SELECT college, course FROM educbg_tbl WHERE student_id = '$student_id'";
-        $student_result = mysqli_query($conn, $student_view_info);
-
-        $colleges = [];
-        $courses = [];
-
-        while ($student_info_row = mysqli_fetch_assoc($student_result)) {
-            $colleges[] = $student_info_row['college'];
-            $courses[] = $student_info_row['course'];
-        }
+        
 
         if (isset($_GET['id'])) {
             $id = $_GET['id'];

@@ -2,9 +2,9 @@
 class AdminClass
 {
     private $host = 'localhost';
-    private $db   = 'testdb';
+    private $db   = 'karldb';
     private $user = 'root';
-    private $pass = 'IOPiop)_+0-=';
+    private $pass = 'ardeio13';
     private $conn;
 
     public function __construct() {

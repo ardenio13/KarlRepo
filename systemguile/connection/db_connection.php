@@ -2,7 +2,7 @@
 
 $host = "localhost";
 $user = "root";
-$pass = "";
+$pass = "ardeio13";
 $db = "register_db";
 
 $conn = mysqli_connect($host, $user, $pass, $db);
